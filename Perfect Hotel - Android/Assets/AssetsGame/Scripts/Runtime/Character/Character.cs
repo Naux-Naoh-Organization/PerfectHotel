@@ -10,7 +10,7 @@ public class Character : MonoBehaviour
     [SerializeField] private CharacterAnimHandle animHandle;
 
     private ActionState actionState = ActionState.Idle;
-
+    public bool isPlayer;
 
    
 

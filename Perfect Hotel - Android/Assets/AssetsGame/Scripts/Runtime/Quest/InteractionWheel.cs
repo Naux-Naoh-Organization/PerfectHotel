@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,7 +20,9 @@ public class InteractionWheel : MonoBehaviour
     public void LookAtCam()
     {
         if (cam == null) return;
-        transform.LookAt(cam.transform.position);
+
+        var direction = cam.transform.position - transform.position;
+        transform.rotation = Quaternion.LookRotation(direction * -1);
     }
 
     public void ShowInteractionWheel()
@@ -34,7 +34,7 @@ public class InteractionWheel : MonoBehaviour
         gobjWheel.SetActive(false);
     }
 
-    public void SetProcess(int value)
+    public void SetProcess(float value)
     {
         imgProcess.fillAmount = value;
     }
