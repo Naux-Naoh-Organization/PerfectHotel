@@ -4,9 +4,9 @@ public class ReceptionQuest : Quest
 {
     [SerializeField] private DropArea dropArea;
 
-    public override void DoneQuest()
+    public override void RewardQuest()
     {
-        base.DoneQuest();
+        base.RewardQuest();
 
         dropArea.FindPosCanSpawn(out var canSpawn, out var posSpawn, out var idFloor, out var idPlace);
         if (canSpawn)
@@ -18,6 +18,6 @@ public class ReceptionQuest : Quest
         }
 
 
-        ShowQuest();
+        ActiveQuest(); // Delete later, add bot and logic more
     }
 }
