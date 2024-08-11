@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ReceptionQuest : Quest
@@ -10,9 +8,15 @@ public class ReceptionQuest : Quest
     {
         base.DoneQuest();
 
-        dropArea.FindPosCanSpawn(out var canSpawn, out var posSpawn);
+        dropArea.FindPosCanSpawn(out var canSpawn, out var posSpawn, out var idFloor, out var idPlace);
         if (canSpawn)
-            SpawnHandle.Instance.SpawnObj(SpawnID.Money, posSpawn);
+        {
+            var gobj = SpawnHandle.Instance.SpawnObj(SpawnID.Money, posSpawn);
+            var money = gobj.GetComponent<DropItem>();
+            money.SetMoneyPlace(dropArea, idFloor, idPlace);
+            money.SetAmountItem(10);
+        }
+
 
         ShowQuest();
     }

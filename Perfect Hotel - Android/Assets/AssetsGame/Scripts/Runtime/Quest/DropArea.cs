@@ -11,10 +11,13 @@ public class DropArea : MonoBehaviour
     [SerializeField] private List<FloorDrop> lstFloorDrop = new List<FloorDrop>();
 
 
-    public void FindPosCanSpawn(out bool canSpawn, out Vector3 posSpawn)
+    public void FindPosCanSpawn(out bool canSpawn, out Vector3 posSpawn, out int idFloor, out int idPlace)
     {
         canSpawn = false;
         posSpawn = Vector3.zero;
+        idFloor = 0;
+        idPlace = 0;
+
 
         var _countFLoor = lstFloorDrop.Count;
         var _countPlace = row * col;
@@ -25,12 +28,18 @@ public class DropArea : MonoBehaviour
                 if (lstFloorDrop[i].lstPlaces[j].isFull) continue;
                 lstFloorDrop[i].lstPlaces[j].isFull = true;
                 posSpawn = lstFloorDrop[i].lstPlaces[j].pos;
+                idFloor = i;
+                idPlace = j;
                 canSpawn = true;
                 return;
             }
         }
     }
 
+    public void ResetPlace(int idFloor, int idPlace)
+    {
+        lstFloorDrop[idFloor].lstPlaces[idPlace].isFull = false;
+    }
 
 
 

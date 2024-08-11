@@ -12,11 +12,11 @@ public class Character : MonoBehaviour
     private ActionState actionState = ActionState.Idle;
     public bool isPlayer;
 
-   
+
 
     public void ChangeStateAction(ActionState action)
     {
-        actionState = action;    
+        actionState = action;
         animHandle.RunAnim(actionState);
     }
 
@@ -26,6 +26,11 @@ public class Character : MonoBehaviour
         moveHandle.MoveToDirection(direct);
     }
 
+    public void CollectedMoneyItem(int amount)
+    {
+        DBController.Instance.MONEY += amount;
+        CurrencyBar.Instance.UpdateMoneyUI(DBController.Instance.MONEY);
+    }
 
 }
 public enum ActionState
