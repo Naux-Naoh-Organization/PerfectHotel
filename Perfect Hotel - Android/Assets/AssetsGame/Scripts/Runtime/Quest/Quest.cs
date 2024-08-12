@@ -2,84 +2,52 @@ using UnityEngine;
 
 public class Quest : MonoBehaviour
 {
-    [SerializeField] private InteractionArea interactionArea;
-    [SerializeField] private InteractionWheel interactionWheel;
-
-    [SerializeField] private float timeQuest;
     [SerializeField] private QuestState questState;
-
-    private GameObject gobjArea;
-    private float timeInteract;
+    [SerializeField] private InteractionArea interactionArea;
+    [SerializeField] protected GameObject gobjInteractionArea;
 
     void Start()
     {
-        if (interactionArea == null)
-            interactionArea = GetComponentInChildren<InteractionArea>();
-
-        if (interactionWheel == null)
-            interactionWheel = GetComponentInChildren<InteractionWheel>();
-
-        gobjArea = interactionArea.gameObject;
-        interactionArea.interact += QuestInteraction;
+        Init();
     }
-
-    public void ActiveQuest()
-    {
-        ShowQuest();
-        SetQuestState(QuestState.QuestReady);
-    }
-    void SetQuestState(QuestState state)
+    protected void SetQuestState(QuestState state)
     {
         questState = state;
     }
-    void ShowQuest()
+    public virtual void Init()
     {
-        ResetInteractionWheel();
-        interactionWheel.ShowInteractionWheel();
-        gobjArea.SetActive(true);
+        if (interactionArea == null)
+            interactionArea = GetComponentInChildren<InteractionArea>();
+        interactionArea.interact += QuestInteraction;
     }
-    void ResetInteractionWheel()
+    public virtual void ActiveQuest()
     {
-        interactionWheel.SetProcess(0);
-        timeInteract = 0;
-        interactionWheel.LookAtCam();
+        SetQuestState(QuestState.QuestReady);
     }
 
 
-    void QuestInteraction()
+    public virtual void QuestInteraction()
     {
-        if (questState != QuestState.QuestReady) return;
-        LoadingWheel();
-
-        var check = CheckQuestProcessing();
-        if (!check) return;
-
-        SetQuestState(QuestState.QuestCompleted);
-        HideQuest();
-        RewardQuest();
     }
 
-    void LoadingWheel()
+    protected bool CheckQuestReady()
     {
-        timeInteract += Time.deltaTime;
-        var value = timeInteract / timeQuest;
-        interactionWheel.SetProcess(value);
-    }
+        return questState == QuestState.QuestReady;
 
-    bool CheckQuestProcessing()
-    {
-        return timeInteract >= timeQuest;
     }
-    void HideQuest()
+    public virtual bool CheckCompletedProcess()
     {
-        interactionWheel.HideInteractionWheel();
-        gobjArea.SetActive(false);
+        return false;
     }
 
     public virtual void RewardQuest()
     {
     }
-
+    [ContextMenu("AddTest")]
+    public void AddTest()
+    {
+        gobjInteractionArea = interactionArea.gameObject;
+    }
 }
 
 public enum QuestState

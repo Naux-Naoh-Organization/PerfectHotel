@@ -1,8 +1,9 @@
+using NauxUtils;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
     [SerializeField] private FloatingJoystick joystick;
     [SerializeField] private Character character;
@@ -34,4 +35,9 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void SpendMoneyToPay(int amount)
+    {
+        DBController.Instance.MONEY -= amount;
+        CurrencyBar.Instance.UpdateMoneyUI(DBController.Instance.MONEY);
+    }
 }

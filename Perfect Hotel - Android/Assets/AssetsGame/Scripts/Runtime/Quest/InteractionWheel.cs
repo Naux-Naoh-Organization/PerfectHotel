@@ -7,13 +7,15 @@ public class InteractionWheel : MonoBehaviour
     [SerializeField] private Image imgProcess;
     [SerializeField] private GameObject gobjWheel;
 
-
-
-
     private void OnValidate()
     {
         cam = Camera.main;
         GetComponent<Canvas>().worldCamera = cam;
+    }
+
+    private void Start()
+    {
+        LookAtCam();
     }
 
     [ContextMenu(nameof(LookAtCam))]
@@ -21,8 +23,10 @@ public class InteractionWheel : MonoBehaviour
     {
         if (cam == null) return;
 
-        var direction = cam.transform.position - transform.position;
-        transform.rotation = Quaternion.LookRotation(direction * -1);
+        transform.LookAt(cam.transform.position);
+        var _newEuler = transform.eulerAngles;
+        _newEuler.y = 180;
+        transform.eulerAngles = _newEuler;
     }
 
     public void ShowInteractionWheel()
@@ -38,6 +42,4 @@ public class InteractionWheel : MonoBehaviour
     {
         imgProcess.fillAmount = value;
     }
-
-
 }

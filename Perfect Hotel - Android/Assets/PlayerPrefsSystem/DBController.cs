@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 public class DBController : NauxUtils.Singleton<DBController>
 {
@@ -76,32 +77,36 @@ public class DBController : NauxUtils.Singleton<DBController>
     private int money;
     public int MONEY
     {
-        get => money; set
+        get => money;
+        set
         {
             money = value;
             Save(DBKey.MONEY, value);
         }
     }
 
-    //    private ListMonthData _calendarData;
-    //
-    //    public ListMonthData CALENDAR_DATA
-    //    {
-    //        get => _calendarData;
-    //        set
-    //        {
-    //            _calendarData = value;
-    //            Save(DBKey.CALENDAR_DATA, value);
-    //        }
-    //    }
-
+    private FloorData floorData;
+    public FloorData FLOOR_DATA
+    {
+        get => floorData;
+        set
+        {
+            floorData = value;
+            Save(DBKey.FLOOR_DATA, value);
+        }
+    }
 
     void Initializing()
     {
 
-        CheckDependency(DBKey.MONEY, key =>
+        CheckDependency(DBKey.MONEY, key => MONEY = 50);
+
+        CheckDependency(DBKey.FLOOR_DATA, key =>
         {
-            MONEY = 50;
+            var _temp = new FloorData();
+            _temp.lstRoomState = new List<bool> { true, false, false, false };
+
+            FLOOR_DATA = _temp;
         });
 
         //        CheckDependency(DBKey.CALENDAR_DATA, key =>
@@ -133,12 +138,12 @@ public class DBController : NauxUtils.Singleton<DBController>
     void Load()
     {
         money = LoadDataByKey<int>(DBKey.MONEY);
-        //_calendarData = LoadDataByKey<ListMonthData>(DBKey.CALENDAR_DATA);
+        floorData = LoadDataByKey<FloorData>(DBKey.FLOOR_DATA);
     }
 }
 
 public class DBKey
 {
     public static readonly string MONEY = "MONEY";
-    //public static readonly string CALENDAR_DATA = "CALENDAR_DATA";
+    public static readonly string FLOOR_DATA = "FLOOR_DATA";
 }
