@@ -7,7 +7,7 @@ public class Room : MonoBehaviour
     [SerializeField] private GameObject gobjBlockWall;
     [SerializeField] private GameObject gobjRoomObjects;
     [SerializeField] private UnlockQuest unlockQuest;
-    [SerializeField] private List<Quest> lstQuestOfRoom = new List<Quest>();
+    [SerializeField] private List<CleanQuest> lstQuestOfRoom = new List<CleanQuest>();
     public GameObject destination;
     private int idRoom;
     private BotCharacter botCharacter;
@@ -89,6 +89,7 @@ public class Room : MonoBehaviour
         var _count = lstQuestOfRoom.Count;
         for (int i = 0; i < _count; i++)
         {
+            lstQuestOfRoom[i].PlayAnimQuest();
             lstQuestOfRoom[i].ActiveQuest();
         }
     }

@@ -451,6 +451,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 39416777}
+  - component: {fileID: 39416778}
   m_Layer: 0
   m_Name: Picture
   m_TagString: Untagged
@@ -474,6 +475,27 @@ Transform:
   - {fileID: 542401819}
   m_Father: {fileID: 154969274}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &39416778
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39416776}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d687f9abda99a8a47acada3686591768, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &42206581
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,6 +899,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 87332644}
+  - component: {fileID: 87332646}
   - component: {fileID: 87332645}
   m_Layer: 0
   m_Name: Bed
@@ -921,6 +944,27 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!95 &87332646
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87332643}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59976decea3a52e4e845f43a203259a1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &103685796
 GameObject:
   m_ObjectHideFlags: 0
@@ -2025,6 +2069,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 205352991}
+  - component: {fileID: 205352992}
   m_Layer: 0
   m_Name: Plant
   m_TagString: Untagged
@@ -2048,6 +2093,27 @@ Transform:
   - {fileID: 1297511682}
   m_Father: {fileID: 1780895942}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &205352992
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205352990}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 139acddb737233e46a5eabfc8e5f7423, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &207894483
 GameObject:
   m_ObjectHideFlags: 0
@@ -2100,6 +2166,8 @@ MonoBehaviour:
   gobjInteractionArea: {fileID: 1788589469}
   interactionWheel: {fileID: 646847735}
   timeQuest: 2.5
+  questAnimator: {fileID: 1802757146}
+  animQuestState: 0
 --- !u!1 &251804265
 GameObject:
   m_ObjectHideFlags: 0
@@ -2858,6 +2926,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 338950483}
+  - component: {fileID: 338950484}
   m_Layer: 0
   m_Name: Picture
   m_TagString: Untagged
@@ -2881,6 +2950,27 @@ Transform:
   - {fileID: 951771664}
   m_Father: {fileID: 984807325}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &338950484
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338950482}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d687f9abda99a8a47acada3686591768, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &342086217
 GameObject:
   m_ObjectHideFlags: 0
@@ -3509,6 +3599,8 @@ MonoBehaviour:
   gobjInteractionArea: {fileID: 1034963815}
   interactionWheel: {fileID: 1938293568}
   timeQuest: 2.5
+  questAnimator: {fileID: 87332646}
+  animQuestState: 0
 --- !u!1 &366282307
 GameObject:
   m_ObjectHideFlags: 0
@@ -3829,6 +3921,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 406199024}
+  - component: {fileID: 406199026}
   - component: {fileID: 406199025}
   m_Layer: 0
   m_Name: Bed
@@ -3873,6 +3966,27 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!95 &406199026
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406199023}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59976decea3a52e4e845f43a203259a1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &420797690
 GameObject:
   m_ObjectHideFlags: 0
@@ -4248,6 +4362,8 @@ MonoBehaviour:
   gobjInteractionArea: {fileID: 1653594820}
   interactionWheel: {fileID: 961949433}
   timeQuest: 2.5
+  questAnimator: {fileID: 205352992}
+  animQuestState: 0
 --- !u!1 &471671526
 GameObject:
   m_ObjectHideFlags: 0
@@ -5415,6 +5531,8 @@ MonoBehaviour:
   gobjInteractionArea: {fileID: 1499924208}
   interactionWheel: {fileID: 1834722275}
   timeQuest: 2.5
+  questAnimator: {fileID: 406199026}
+  animQuestState: 0
 --- !u!1 &598588465
 GameObject:
   m_ObjectHideFlags: 0
@@ -5743,6 +5861,8 @@ MonoBehaviour:
   gobjInteractionArea: {fileID: 1235584648}
   interactionWheel: {fileID: 1207341654}
   timeQuest: 2.5
+  questAnimator: {fileID: 338950484}
+  animQuestState: 0
 --- !u!1 &656127737
 GameObject:
   m_ObjectHideFlags: 0
@@ -6785,6 +6905,8 @@ MonoBehaviour:
   gobjInteractionArea: {fileID: 791439738}
   interactionWheel: {fileID: 375786020}
   timeQuest: 2.5
+  questAnimator: {fileID: 39416778}
+  animQuestState: 0
 --- !u!1 &751261738
 GameObject:
   m_ObjectHideFlags: 0
@@ -8816,7 +8938,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961949427}
   m_LocalRotation: {x: 0.48123437, y: 0.0016703318, z: -0.0009169864, w: 0.87658995}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.2}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8825,7 +8947,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2.7}
+  m_AnchoredPosition: {x: 0.2, y: 2.7}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &961949430
@@ -9056,8 +9178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 131ae1a45641a714d9afc9cad4de5b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vectorRotCam: {x: 55, y: 0, z: 0}
-  vectorOffset: {x: 0, y: 11, z: -7}
+  vectorRotCam: {x: 50, y: 0, z: 0}
+  vectorOffset: {x: 0, y: 9.5, z: -8}
   tfmFollow: {fileID: 769774607}
 --- !u!1 &967829486
 GameObject:
@@ -9851,6 +9973,8 @@ MonoBehaviour:
   gobjInteractionArea: {fileID: 1634533457}
   interactionWheel: {fileID: 2125903043}
   timeQuest: 2.5
+  questAnimator: {fileID: 1739685132}
+  animQuestState: 0
 --- !u!1 &1017427655
 GameObject:
   m_ObjectHideFlags: 0
@@ -11586,6 +11710,8 @@ MonoBehaviour:
   gobjInteractionArea: {fileID: 1324809240}
   interactionWheel: {fileID: 1887380640}
   timeQuest: 2.5
+  questAnimator: {fileID: 1227288774}
+  animQuestState: 0
 --- !u!1 &1203827639
 GameObject:
   m_ObjectHideFlags: 0
@@ -11748,6 +11874,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1227288773}
+  - component: {fileID: 1227288774}
   m_Layer: 0
   m_Name: Picture
   m_TagString: Untagged
@@ -11771,6 +11898,27 @@ Transform:
   - {fileID: 8911055313785647743}
   m_Father: {fileID: 1567224876}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1227288774
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227288772}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d687f9abda99a8a47acada3686591768, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1235584648
 GameObject:
   m_ObjectHideFlags: 0
@@ -14926,6 +15074,8 @@ MonoBehaviour:
   gobjInteractionArea: {fileID: 45810965}
   interactionWheel: {fileID: 471671532}
   timeQuest: 2.5
+  questAnimator: {fileID: 2118875455}
+  animQuestState: 0
 --- !u!1 &1619607620
 GameObject:
   m_ObjectHideFlags: 0
@@ -14978,6 +15128,8 @@ MonoBehaviour:
   gobjInteractionArea: {fileID: 2061787536}
   interactionWheel: {fileID: 1962787143}
   timeQuest: 2.5
+  questAnimator: {fileID: 2053461378}
+  animQuestState: 0
 --- !u!1 &1620919200
 GameObject:
   m_ObjectHideFlags: 0
@@ -15006,7 +15158,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1620919200}
   m_LocalRotation: {x: 0.48123437, y: 0.0016703318, z: -0.0009169864, w: 0.87658995}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.2}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15015,7 +15167,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2.7}
+  m_AnchoredPosition: {x: -0.2, y: 2.7}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1620919203
@@ -15643,6 +15795,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1676193220}
+  - component: {fileID: 1676193222}
   - component: {fileID: 1676193221}
   m_Layer: 0
   m_Name: Bed
@@ -15687,6 +15840,27 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!95 &1676193222
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676193219}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59976decea3a52e4e845f43a203259a1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1693305062
 GameObject:
   m_ObjectHideFlags: 0
@@ -16176,6 +16350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1726746151}
+  - component: {fileID: 1726746152}
   m_Layer: 0
   m_Name: Plant
   m_TagString: Untagged
@@ -16199,6 +16374,27 @@ Transform:
   - {fileID: 1530330142}
   m_Father: {fileID: 510198376}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1726746152
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726746150}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 139acddb737233e46a5eabfc8e5f7423, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1731017745
 GameObject:
   m_ObjectHideFlags: 0
@@ -16283,6 +16479,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1739685131}
+  - component: {fileID: 1739685132}
   m_Layer: 0
   m_Name: Plant
   m_TagString: Untagged
@@ -16306,6 +16503,27 @@ Transform:
   - {fileID: 1755755850}
   m_Father: {fileID: 716524263}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1739685132
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739685130}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 139acddb737233e46a5eabfc8e5f7423, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1755755849
 GameObject:
   m_ObjectHideFlags: 0
@@ -17090,6 +17308,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1802757145}
+  - component: {fileID: 1802757146}
   m_Layer: 0
   m_Name: Picture
   m_TagString: Untagged
@@ -17113,6 +17332,27 @@ Transform:
   - {fileID: 678026780}
   m_Father: {fileID: 1009012605}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1802757146
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802757144}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d687f9abda99a8a47acada3686591768, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1807244041
 GameObject:
   m_ObjectHideFlags: 0
@@ -18711,7 +18951,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962787137}
   m_LocalRotation: {x: 0.48123437, y: 0.0016703318, z: -0.0009169864, w: 0.87658995}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.2}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18720,7 +18960,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2.7}
+  m_AnchoredPosition: {x: -0.2, y: 2.7}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1962787140
@@ -19164,6 +19404,8 @@ MonoBehaviour:
   gobjInteractionArea: {fileID: 342086217}
   interactionWheel: {fileID: 1620919206}
   timeQuest: 2.5
+  questAnimator: {fileID: 1726746152}
+  animQuestState: 0
 --- !u!1 &2026066275
 GameObject:
   m_ObjectHideFlags: 0
@@ -19765,6 +20007,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2053461377}
+  - component: {fileID: 2053461378}
   m_Layer: 0
   m_Name: Plant
   m_TagString: Untagged
@@ -19788,6 +20031,27 @@ Transform:
   - {fileID: 2972358238429941869}
   m_Father: {fileID: 1335804662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2053461378
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053461376}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 139acddb737233e46a5eabfc8e5f7423, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2061787536
 GameObject:
   m_ObjectHideFlags: 0
@@ -20488,6 +20752,8 @@ MonoBehaviour:
   gobjInteractionArea: {fileID: 1078766773}
   interactionWheel: {fileID: 867275643}
   timeQuest: 2.5
+  questAnimator: {fileID: 1676193222}
+  animQuestState: 0
 --- !u!1 &2096478196
 GameObject:
   m_ObjectHideFlags: 0
@@ -20805,6 +21071,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2118875453}
+  - component: {fileID: 2118875455}
   - component: {fileID: 2118875454}
   m_Layer: 0
   m_Name: Bed
@@ -20849,6 +21116,27 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!95 &2118875455
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118875452}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59976decea3a52e4e845f43a203259a1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2125903037
 GameObject:
   m_ObjectHideFlags: 0
@@ -20877,7 +21165,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125903037}
   m_LocalRotation: {x: 0.48123437, y: 0.0016703318, z: -0.0009169864, w: 0.87658995}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.2}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20886,7 +21174,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2.7}
+  m_AnchoredPosition: {x: 0.2, y: 2.7}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2125903040

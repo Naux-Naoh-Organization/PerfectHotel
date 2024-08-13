@@ -99,7 +99,7 @@ public class DBController : NauxUtils.Singleton<DBController>
     void Initializing()
     {
 
-        CheckDependency(DBKey.MONEY, key => MONEY = 500);
+        CheckDependency(DBKey.MONEY, key => MONEY = 50);
 
         CheckDependency(DBKey.FLOOR_DATA, key =>
         {
