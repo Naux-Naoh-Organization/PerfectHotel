@@ -10,6 +10,9 @@ public class InteractionArea : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        interact?.Invoke(); 
+        other.TryGetComponent<PlayerCharacter>(out var charact);
+        if (charact == null) return;
+
+        interact?.Invoke();
     }
 }

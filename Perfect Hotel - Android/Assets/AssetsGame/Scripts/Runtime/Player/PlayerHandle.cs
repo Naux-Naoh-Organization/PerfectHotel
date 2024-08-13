@@ -1,14 +1,10 @@
 using NauxUtils;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : Singleton<PlayerController>
+public class PlayerHandle : Singleton<PlayerHandle>
 {
     [SerializeField] private FloatingJoystick joystick;
-    [SerializeField] private Character character;
-
-
+    [SerializeField] private PlayerCharacter character;
 
     private void Update()
     {
@@ -22,7 +18,6 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
-
     void PlayerIdle()
     {
         character.ChangeStateAction(ActionState.Idle);
@@ -32,7 +27,6 @@ public class PlayerController : Singleton<PlayerController>
     {
         character.ChangeStateAction(ActionState.Walk);
         character.CharacterMove(joystick.Direction);
-
     }
 
     public void SpendMoneyToPay(int amount)

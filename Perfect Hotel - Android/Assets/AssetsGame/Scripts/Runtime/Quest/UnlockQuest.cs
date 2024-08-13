@@ -55,7 +55,7 @@ public class UnlockQuest : Quest
             if (timeCheckDelay > 0) return;
             timeCheckDelay = timeDelaySpend;
 
-            PlayerController.Instance.SpendMoneyToPay(priceSpendEachTime);
+            PlayerHandle.Instance.SpendMoneyToPay(priceSpendEachTime);
             priceQuest -= priceSpendEachTime;
             interactionRequest.SetPrice(priceQuest);
         }

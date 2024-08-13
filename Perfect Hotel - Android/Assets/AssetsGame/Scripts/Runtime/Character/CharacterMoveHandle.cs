@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterMoveHandle : MonoBehaviour
@@ -8,7 +6,7 @@ public class CharacterMoveHandle : MonoBehaviour
 
     public float speedMovement;
 
-
+    //for player
     public void MoveToDirection(Vector2 direction)
     {
         var direct3 = new Vector3(direction.x, 0, direction.y);

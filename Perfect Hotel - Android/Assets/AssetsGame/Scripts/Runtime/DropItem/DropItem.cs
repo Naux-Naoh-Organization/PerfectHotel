@@ -5,11 +5,8 @@ public class DropItem : MonoBehaviour, IDroppable, ICollectable
 {
     [SerializeField] private int amount;
     [SerializeField] private BoxCollider colliderItem;
-
     [SerializeField] private MoneyPlace moneyPlace;
-
     public int Amount => amount;
-    
 
 
     public void SetMoneyPlace(DropArea inArea, int idFloor, int idPlace)
@@ -32,25 +29,22 @@ public class DropItem : MonoBehaviour, IDroppable, ICollectable
 
     public void DestroyItem()
     {
-
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        other.TryGetComponent<Character>(out var charact);
-        if (charact != null && charact.isPlayer)
+        other.TryGetComponent<PlayerCharacter>(out var charact);
+
+        if (charact == null) return;
+
+        charact.CollectedMoneyItem(amount);
+        if (moneyPlace.area != null)
         {
-            charact.CollectedMoneyItem(amount);
-            if(moneyPlace.area != null)
-            {
-                moneyPlace.area.ResetPlace(moneyPlace.idFloor,moneyPlace.idPlace);
-            }
-            Destroy(gameObject);
+            moneyPlace.area.ResetPlace(moneyPlace.idFloor, moneyPlace.idPlace);
         }
+        Destroy(gameObject);
     }
-
-
 }
 [Serializable]
 public class MoneyPlace
