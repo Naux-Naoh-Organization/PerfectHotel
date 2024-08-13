@@ -30,9 +30,9 @@ public class Quest : MonoBehaviour
     {
     }
 
-    protected bool CheckQuestReady()
+    public bool CheckQuestState(QuestState state)
     {
-        return questState == QuestState.QuestReady;
+        return questState == state;
 
     }
     public virtual bool CheckCompletedProcess()
@@ -43,8 +43,8 @@ public class Quest : MonoBehaviour
     public virtual void RewardQuest()
     {
     }
-    [ContextMenu("AddTest")]
-    public void AddTest()
+    [ContextMenu("AddInteractionArea")]
+    public void AddInteractionArea()
     {
         gobjInteractionArea = interactionArea.gameObject;
     }
@@ -52,7 +52,7 @@ public class Quest : MonoBehaviour
 
 public enum QuestState
 {
-    None = 0,
     QuestReady = 1,
     QuestCompleted = 2,
+    QuestRunning = 3,
 }

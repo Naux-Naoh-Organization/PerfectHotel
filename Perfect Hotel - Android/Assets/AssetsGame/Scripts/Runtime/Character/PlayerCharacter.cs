@@ -2,12 +2,16 @@ using UnityEngine;
 
 public class PlayerCharacter : Character
 {
+    [SerializeField] private CharacterController characterController;
+    public float speedMovement;
 
-    public void CharacterMove(Vector2 direct)
+    public void MoveToDirection(Vector2 direction)
     {
-        moveHandle.MoveToDirection(direct);
+        var direct3 = new Vector3(direction.x, 0, direction.y);
+        direct3.y = 0;
+        characterController.Move(direct3 * Time.deltaTime * speedMovement);
+        characterController.transform.forward = direct3;
     }
-
 
     public void CollectedMoneyItem(int amount)
     {

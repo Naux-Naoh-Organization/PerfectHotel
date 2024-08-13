@@ -49,7 +49,7 @@ public class CleanQuest : Quest
     }
     public override void QuestInteraction()
     {
-        var _checkReady = CheckQuestReady();
+        var _checkReady = CheckQuestState(QuestState.QuestReady);
         if (!_checkReady) return;
 
         LoadingWheel();

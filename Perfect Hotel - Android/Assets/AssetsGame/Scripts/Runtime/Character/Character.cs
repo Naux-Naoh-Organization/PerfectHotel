@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    [SerializeField] protected CharacterMoveHandle moveHandle;
     [SerializeField] private CharacterAnimHandle animHandle;
     private ActionState actionState = ActionState.Idle;
 
@@ -11,8 +10,6 @@ public class Character : MonoBehaviour
         actionState = action;
         animHandle.RunAnim(actionState);
     }
-
-
 }
 public enum ActionState
 {

@@ -46,7 +46,7 @@ public class UnlockQuest : Quest
     }
     public override void QuestInteraction()
     {
-        var _checkReady = CheckQuestReady();
+        var _checkReady = CheckQuestState(QuestState.QuestReady);
         if (!_checkReady) return;
 
         if (DBController.Instance.MONEY >= priceSpendEachTime)

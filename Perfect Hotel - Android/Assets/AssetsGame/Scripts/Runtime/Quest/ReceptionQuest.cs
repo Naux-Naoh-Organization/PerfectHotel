@@ -50,31 +50,46 @@ public class ReceptionQuest : Quest
     }
     public override void QuestInteraction()
     {
-        var checkReady = CheckQuestReady();
-        if (!checkReady) return;
+        var _checkReady = CheckQuestState(QuestState.QuestReady);
+        if (!_checkReady) return;
+
+        var _checkRoom = FloorHandle.Instance.HasRoomValid();
+        if (!_checkRoom) return;
+        SetQuestState(QuestState.QuestRunning);
+
+    }
+
+    private void FixedUpdate()
+    {
+        var _checkRunning = CheckQuestState(QuestState.QuestRunning);
+        if (!_checkRunning) return;
+
 
         LoadingWheel();
-        var check = CheckCompletedProcess();
-        if (!check) return;
+        var _check = CheckCompletedProcess();
+        if (!_check) return;
 
         SetQuestState(QuestState.QuestCompleted);
         HideQuest();
         RewardQuest();
     }
 
+
+
     public override void RewardQuest()
     {
         dropArea.FindPosCanSpawn(out var canSpawn, out var posSpawn, out var idFloor, out var idPlace);
+        
         if (canSpawn)
         {
-            var gobj = SpawnHandle.Instance.SpawnObj(SpawnID.Money, posSpawn);
-            var money = gobj.GetComponent<DropItem>();
-            money.SetMoneyPlace(dropArea, idFloor, idPlace);
-            money.SetAmountItem(10);
+            var _gobj = SpawnHandle.Instance.SpawnObj(SpawnID.Money, posSpawn);
+            var _money = _gobj.GetComponent<DropItem>();
+            _money.SetMoneyPlace(dropArea, idFloor, idPlace);
+            _money.SetAmountItem(10);
         }
 
-
-        ActiveQuest(); // Delete later, add bot and logic more
+        FloorHandle.Instance.RequiredRoom();
+        ActiveQuest();
     }
 
     [ContextMenu(nameof(AddInteractionWheel))]

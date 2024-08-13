@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +8,9 @@ public class Room : MonoBehaviour
     [SerializeField] private GameObject gobjRoomObjects;
     [SerializeField] private UnlockQuest unlockQuest;
     [SerializeField] private List<Quest> lstQuestOfRoom = new List<Quest>();
+    public GameObject destination;
     private int idRoom;
+    private BotCharacter botCharacter;
 
     private void Start()
     {
@@ -21,11 +22,16 @@ public class Room : MonoBehaviour
         FloorHandle.Instance.UpdateUnlockRoomQuest(idRoom);
     }
 
-
     public void SetIdRoom(int id)
     {
         idRoom = id;
     }
+    public void SetCharacterRentRoom(BotCharacter character)
+    {
+        botCharacter = character;
+        botCharacter.actionCheckOut += ActiveAllQuestRoom;
+    }
+
     public void SetStateRoom(RoomState state)
     {
         roomState = state;
@@ -60,9 +66,26 @@ public class Room : MonoBehaviour
         unlockQuest.ActiveQuest();
     }
 
+    public bool CheckRoomValid()
+    {
+        return roomState == RoomState.Unlock && botCharacter == null && CheckAllQuestCompleted();
+    }
 
+    bool CheckAllQuestCompleted()
+    {
+        var _count = lstQuestOfRoom.Count;
+        for (int i = 0; i < _count; i++)
+        {
+            var _check = lstQuestOfRoom[i].CheckQuestState(QuestState.QuestCompleted);
+            if (_check == false) return false;
+        }
+        return true;
+    }
     public void ActiveAllQuestRoom()
     {
+        botCharacter.actionCheckOut -= ActiveAllQuestRoom;
+        botCharacter = null;
+
         var _count = lstQuestOfRoom.Count;
         for (int i = 0; i < _count; i++)
         {

@@ -9,24 +9,20 @@ public class PlayerHandle : Singleton<PlayerHandle>
     private void Update()
     {
         if (joystick.Direction == Vector2.zero)
-        {
-            PlayerIdle();
-        }
+            Idle();
         else
-        {
-            PlayerMove();
-        }
+            Move();
     }
 
-    void PlayerIdle()
+    void Idle()
     {
         character.ChangeStateAction(ActionState.Idle);
     }
 
-    void PlayerMove()
+    void Move()
     {
         character.ChangeStateAction(ActionState.Walk);
-        character.CharacterMove(joystick.Direction);
+        character.MoveToDirection(joystick.Direction);
     }
 
     public void SpendMoneyToPay(int amount)
