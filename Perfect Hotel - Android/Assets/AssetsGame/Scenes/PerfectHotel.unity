@@ -212,7 +212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &11882747
 Transform:
   m_ObjectHideFlags: 0
@@ -626,6 +626,7 @@ GameObject:
   - component: {fileID: 45877769}
   - component: {fileID: 45877771}
   - component: {fileID: 45877770}
+  - component: {fileID: 45877772}
   m_Layer: 0
   m_Name: Room_11_Floor_2
   m_TagString: Untagged
@@ -698,6 +699,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45877768}
   m_Mesh: {fileID: -4006352958716068489, guid: 37c3d58c34e512b4b8fa377ab51c1a84, type: 3}
+--- !u!114 &45877772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45877768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &49771259
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,6 +877,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 87332644}
+  - component: {fileID: 87332645}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -881,6 +902,25 @@ Transform:
   - {fileID: 1032246637}
   m_Father: {fileID: 915850605}
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
+--- !u!114 &87332645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87332643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &103685796
 GameObject:
   m_ObjectHideFlags: 0
@@ -2668,6 +2708,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 317180025}
+  - component: {fileID: 317180026}
   m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
@@ -2704,6 +2745,25 @@ Transform:
   - {fileID: 1371101998}
   m_Father: {fileID: 1881058298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &317180026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317180024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &330307457
 GameObject:
   m_ObjectHideFlags: 0
@@ -2925,7 +2985,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &342705571
 Transform:
   m_ObjectHideFlags: 0
@@ -3781,6 +3841,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 406199024}
+  - component: {fileID: 406199025}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -3805,6 +3866,25 @@ Transform:
   - {fileID: 719024583}
   m_Father: {fileID: 675481472}
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
+--- !u!114 &406199025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406199023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &420797690
 GameObject:
   m_ObjectHideFlags: 0
@@ -3880,6 +3960,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 425364785}
+  - component: {fileID: 425364786}
   m_Layer: 0
   m_Name: ReceptionTable
   m_TagString: Untagged
@@ -3904,6 +3985,25 @@ Transform:
   - {fileID: 2048572790}
   m_Father: {fileID: 1881058298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &425364786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425364784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &432303723
 GameObject:
   m_ObjectHideFlags: 0
@@ -4589,6 +4689,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 510784793}
+  - component: {fileID: 510784794}
   m_Layer: 0
   m_Name: Rooms
   m_TagString: Untagged
@@ -4615,6 +4716,25 @@ Transform:
   - {fileID: 861824333}
   m_Father: {fileID: 1881058298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &510784794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510784792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &517974336
 GameObject:
   m_ObjectHideFlags: 0
@@ -4830,7 +4950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &573620030
 Transform:
   m_ObjectHideFlags: 0
@@ -6345,7 +6465,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &728585265
 Transform:
   m_ObjectHideFlags: 0
@@ -6376,6 +6496,7 @@ GameObject:
   - component: {fileID: 733080589}
   - component: {fileID: 733080591}
   - component: {fileID: 733080590}
+  - component: {fileID: 733080592}
   m_Layer: 0
   m_Name: Room_11_Floor_2
   m_TagString: Untagged
@@ -6448,6 +6569,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733080588}
   m_Mesh: {fileID: -4006352958716068489, guid: 37c3d58c34e512b4b8fa377ab51c1a84, type: 3}
+--- !u!114 &733080592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733080588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &743679280
 GameObject:
   m_ObjectHideFlags: 0
@@ -7248,7 +7388,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &830992036
 Transform:
   m_ObjectHideFlags: 0
@@ -10512,7 +10652,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1118489102
 Transform:
   m_ObjectHideFlags: 0
@@ -11167,7 +11307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1195575408
 Transform:
   m_ObjectHideFlags: 0
@@ -11254,7 +11394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1203827640
 Transform:
   m_ObjectHideFlags: 0
@@ -12376,6 +12516,7 @@ GameObject:
   - component: {fileID: 1340014292}
   - component: {fileID: 1340014294}
   - component: {fileID: 1340014293}
+  - component: {fileID: 1340014295}
   m_Layer: 0
   m_Name: Room_11_Floor_2
   m_TagString: Untagged
@@ -12448,6 +12589,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340014291}
   m_Mesh: {fileID: -4006352958716068489, guid: 37c3d58c34e512b4b8fa377ab51c1a84, type: 3}
+--- !u!114 &1340014295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340014291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1342803560
 GameObject:
   m_ObjectHideFlags: 0
@@ -15294,6 +15454,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1676193220}
+  - component: {fileID: 1676193221}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -15318,6 +15479,25 @@ Transform:
   - {fileID: 1769912929}
   m_Father: {fileID: 1560129777}
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
+--- !u!114 &1676193221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676193219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1699045567
 GameObject:
   m_ObjectHideFlags: 0
@@ -17678,7 +17858,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 761315861036800451}
   - {fileID: 2093865347}
   - {fileID: 317180025}
   - {fileID: 425364785}
@@ -17716,7 +17895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AgentTypeID: 0
-  m_CollectObjects: 0
+  m_CollectObjects: 2
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
@@ -17730,9 +17909,9 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.26
+  m_VoxelSize: 0.11666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: e8849312abac85345b2bcd92e8669a86, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &1887380634
 GameObject:
@@ -19786,6 +19965,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2093865347}
   - component: {fileID: 2093865348}
+  - component: {fileID: 2093865349}
   m_Layer: 0
   m_Name: Floors
   m_TagString: Untagged
@@ -19848,6 +20028,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 42.02729, y: 1.0677177, z: 37.44425}
   m_Center: {x: -4.046337, y: -0.4414546, z: 18.222124}
+--- !u!114 &2093865349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093865346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2094212715
 GameObject:
   m_ObjectHideFlags: 0
@@ -20165,6 +20364,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2118875453}
+  - component: {fileID: 2118875454}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -20189,6 +20389,25 @@ Transform:
   - {fileID: 2596294789456675517}
   m_Father: {fileID: 256900047}
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
+--- !u!114 &2118875454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118875452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2125903037
 GameObject:
   m_ObjectHideFlags: 0
@@ -20569,6 +20788,7 @@ GameObject:
   - component: {fileID: 4501027856487015914}
   - component: {fileID: 2668607794784996584}
   - component: {fileID: 671376783868841148}
+  - component: {fileID: 4501027856487015915}
   m_Layer: 0
   m_Name: Room_11_Floor_2
   m_TagString: Untagged
@@ -20631,7 +20851,7 @@ Transform:
   m_LocalScale: {x: 15, y: 1, z: 15}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1881058298}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &818278654675498700
 GameObject:
@@ -21235,6 +21455,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 354745746}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4501027856487015915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591161994205785544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!23 &4639912939819713356
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22029,6 +22268,7 @@ SceneRoots:
   - {fileID: 1359287494}
   - {fileID: 1998343919}
   - {fileID: 918230201}
+  - {fileID: 761315861036800451}
   - {fileID: 1881058298}
   - {fileID: 1068284960}
   - {fileID: 769774607}

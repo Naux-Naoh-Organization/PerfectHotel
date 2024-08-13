@@ -3,8 +3,6 @@ using UnityEngine;
 public class PlayerCharacter : Character
 {
 
-
-
     public void CharacterMove(Vector2 direct)
     {
         moveHandle.MoveToDirection(direct);

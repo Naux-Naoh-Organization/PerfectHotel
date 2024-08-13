@@ -1,9 +1,12 @@
+using UnityEngine;
+
 public class BotCharacter : Character
 {
-    // Start is called before the first frame update
-    void Start()
-    {
 
+
+    public void CharacterMove(Vector2 direct)
+    {
+        moveHandle.MoveToDirection(direct);
     }
 
     // Update is called once per frame
