@@ -15,9 +15,9 @@ public enum ActionState
 {
     Idle = 0,
     Walk = 1,
-    Run = 2,
-    Sad = 3,
-    Win = 4,
-    SongJump = 5,
+    //Run = 2,
+    //Sad = 3,
+    //Win = 4,
+    //SongJump = 5,
     Sleep = 6,
 }

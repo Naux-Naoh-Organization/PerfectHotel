@@ -10,6 +10,7 @@ public class BotCharacter : Character
     [SerializeField] private SkinnedMeshRenderer skinnedMeshRenderer;
     [SerializeField] private List<Mesh> lstMeshSkin = new List<Mesh>();
     public UnityAction actionCheckOut;
+    
 
     private void Awake()
     {
@@ -46,17 +47,16 @@ public class BotCharacter : Character
         AddDestination(destination);
         ChangeStateAction(ActionState.Walk);
         yield return new WaitUntil(() => navMeshAgent.pathPending == false && navMeshAgent.remainingDistance <= 0);
-
-        yield return new WaitForSeconds(0.1f);
+        //yield return new WaitForSeconds(0.1f);
         //transform.forward = (-Vector3.forward);
 
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
         ChangeStateAction(ActionState.Sleep);
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         AddDestination(posBed);
 
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(4);
         actionCheckOut?.Invoke();
         AddDestination(posDoor);
         ChangeStateAction(ActionState.Walk);

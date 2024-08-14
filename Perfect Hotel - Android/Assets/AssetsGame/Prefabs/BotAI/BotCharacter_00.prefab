@@ -707,8 +707,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2449689808291771329}
   - {fileID: 8074365001914827111}
+  - {fileID: 2449689808291771329}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &6816133685557031051
@@ -728,7 +728,7 @@ NavMeshAgent:
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
-  m_AutoRepath: 1
+  m_AutoRepath: 0
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
@@ -1374,6 +1374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7865167665230939449}
+  model: {fileID: 2449689808291771329}
 --- !u!1 &4714131122323675586
 GameObject:
   m_ObjectHideFlags: 0
