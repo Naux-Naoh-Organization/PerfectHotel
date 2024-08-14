@@ -9137,8 +9137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 131ae1a45641a714d9afc9cad4de5b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vectorRotCam: {x: 50, y: 0, z: 0}
-  vectorOffset: {x: 0, y: 9.5, z: -8}
+  vectorRotCam: {x: 60, y: 0, z: 0}
+  vectorOffset: {x: 0, y: 10, z: -6.01}
   tfmFollow: {fileID: 769774607}
 --- !u!1 &967829486
 GameObject:
