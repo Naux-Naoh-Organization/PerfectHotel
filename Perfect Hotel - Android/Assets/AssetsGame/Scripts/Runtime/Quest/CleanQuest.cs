@@ -39,6 +39,7 @@ public class CleanQuest : Quest
         base.Init();
         if (interactionWheel == null)
             interactionWheel = GetComponentInChildren<InteractionWheel>();
+        RunAnim(AnimQuestState.Idle);
     }
     public override void ActiveQuest()
     {
