@@ -5657,7 +5657,7 @@ MonoBehaviour:
   gobjInteractionArea: {fileID: 479919838}
   interactionRequest: {fileID: 360133263}
   unlockQuestType: 0
-  priceQuest: 80
+  priceQuest: 40
   priceSpendEachTime: 1
   timeDelaySpend: 0.02
 --- !u!1 &453514323
@@ -6333,7 +6333,7 @@ MonoBehaviour:
   gobjInteractionArea: {fileID: 1617015036}
   interactionRequest: {fileID: 2008370559}
   unlockQuestType: 1
-  priceQuest: 100
+  priceQuest: 40
   priceSpendEachTime: 1
   timeDelaySpend: 0.02
   upgradeToLevel: 2
@@ -8999,7 +8999,7 @@ MonoBehaviour:
   gobjInteractionArea: {fileID: 85749648}
   interactionRequest: {fileID: 896334368}
   unlockQuestType: 1
-  priceQuest: 160
+  priceQuest: 45
   priceSpendEachTime: 1
   timeDelaySpend: 0.02
   upgradeToLevel: 2
@@ -12607,7 +12607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vectorRotCam: {x: 60, y: 0, z: 0}
-  vectorOffset: {x: 0, y: 9, z: -4.7}
+  vectorOffset: {x: 0, y: 12, z: -7}
   tfmFollow: {fileID: 769774607}
 --- !u!1 &967829486
 GameObject:
@@ -13862,7 +13862,7 @@ MonoBehaviour:
   gobjInteractionArea: {fileID: 1741239404}
   interactionRequest: {fileID: 1922497969}
   unlockQuestType: 1
-  priceQuest: 130
+  priceQuest: 40
   priceSpendEachTime: 1
   timeDelaySpend: 0.02
   upgradeToLevel: 2
@@ -17470,7 +17470,7 @@ MonoBehaviour:
   gobjInteractionArea: {fileID: 420797690}
   interactionRequest: {fileID: 1930326416}
   unlockQuestType: 0
-  priceQuest: 50
+  priceQuest: 30
   priceSpendEachTime: 1
   timeDelaySpend: 0.02
 --- !u!1 &1364252964
@@ -21001,7 +21001,7 @@ MonoBehaviour:
   gobjInteractionArea: {fileID: 1081811243}
   interactionRequest: {fileID: 911826547}
   unlockQuestType: 1
-  priceQuest: 200
+  priceQuest: 50
   priceSpendEachTime: 1
   timeDelaySpend: 0.02
   upgradeToLevel: 2
