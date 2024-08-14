@@ -42,7 +42,13 @@ public class FloorHandle : Singleton<FloorHandle>
         _floorData.lstRoomState[idRoom] = true;
         DBController.Instance.FLOOR_DATA = _floorData;
 
-        Init();
+        var _count = _floorData.lstRoomState.Count;
+        for (int i = 0; i < _count; i++)
+        {
+            if (_floorData.lstRoomState[i]) continue;
+            lstRooms[i].ActiveQuestUnlock(true);
+            return;
+        }
     }
 
 

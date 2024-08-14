@@ -1,15 +1,18 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 public class DropItem : MonoBehaviour, IDroppable, ICollectable
 {
-    [SerializeField] private int amount;
+    [SerializeField] private Animator animator;
     [SerializeField] private BoxCollider colliderItem;
     [SerializeField] private MoneyPlace moneyPlace;
+    [SerializeField] private int amount;
     public int Amount => amount;
+    private bool isPicked;
+    //private Vector3 posFoward;
 
+    static int actionFly = Animator.StringToHash("PickupMoney");
 
     public void SetMoneyPlace(DropArea inArea, int idFloor, int idPlace)
     {
@@ -37,26 +40,38 @@ public class DropItem : MonoBehaviour, IDroppable, ICollectable
     private void OnTriggerEnter(Collider other)
     {
         other.TryGetComponent<PlayerCharacter>(out var charact);
+        if (isPicked || charact == null) return;
 
-        if (charact == null) return;
-
+        isPicked = true;
         charact.CollectedMoneyItem(amount);
         if (moneyPlace.area != null)
-        {
             moneyPlace.area.ResetPlace(moneyPlace.idFloor, moneyPlace.idPlace);
-        }
 
-        StartCoroutine(ItemPicked(charact));
+        transform.SetParent(charact.transform);
+        animator.Play(actionFly);
+
+        StartCoroutine(WaitToDestroy());
     }
 
-    IEnumerator ItemPicked(PlayerCharacter character)
+    //private void Start()
+    //{
+    //    var _rand = UnityEngine.Random.Range(0,2);
+        
+    //    posFoward = _rand == 0 ? Vector3.back : Vector3.forward;
+    //}
+    void FixedUpdate()
     {
-        //transform.SetParent(character.transform);
-        var _time = 1f;
-        Vector3.Slerp(transform.position, character.transform.position, _time);
-        yield return new WaitForSeconds(_time);
+        if (!isPicked) return;
+        //transform.forward = posFoward;
+        transform.forward = Vector3.back;
+    }
+
+    IEnumerator WaitToDestroy()
+    {
+        yield return new WaitForSeconds(1);
         Destroy(gameObject);
     }
+
 }
 [Serializable]
 public class MoneyPlace

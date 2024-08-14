@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -59,7 +60,9 @@ public class Room : MonoBehaviour
     void UnlockRoom()
     {
         gobjBlockWall.SetActive(false);
+        gobjRoomObjects.transform.localScale = Vector3.one * 0.8f;
         gobjRoomObjects.SetActive(true);
+        gobjRoomObjects.transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.OutBack);
     }
     public void ActiveQuestUnlock(bool status)
     {
