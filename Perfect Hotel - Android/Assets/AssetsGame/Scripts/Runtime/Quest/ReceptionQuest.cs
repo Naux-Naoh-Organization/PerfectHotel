@@ -79,16 +79,18 @@ public class ReceptionQuest : Quest
     public override void RewardQuest()
     {
         dropArea.FindPosCanSpawn(out var canSpawn, out var posSpawn, out var idFloor, out var idPlace);
-        
+
         if (canSpawn)
         {
+            var _room = FloorHandle.Instance.RequiredRoom();
+            var _moneyGet = _room.levelRoom * 10;
+
             var _gobj = SpawnHandle.Instance.SpawnObj(SpawnID.Money, posSpawn);
             var _money = _gobj.GetComponent<DropItem>();
             _money.SetMoneyPlace(dropArea, idFloor, idPlace);
-            _money.SetAmountItem(10);
+            _money.SetAmountItem(_moneyGet);
         }
 
-        FloorHandle.Instance.RequiredRoom();
         ActiveQuest();
     }
 

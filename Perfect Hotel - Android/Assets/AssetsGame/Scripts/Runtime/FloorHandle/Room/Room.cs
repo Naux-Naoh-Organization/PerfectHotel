@@ -8,25 +8,59 @@ public class Room : MonoBehaviour
     [SerializeField] private GameObject gobjBlockWall;
     [SerializeField] private GameObject gobjRoomObjects;
     [SerializeField] private UnlockQuest unlockQuest;
+    [SerializeField] private UpgradeQuest upgradeQuest;
     [SerializeField] private List<CleanQuest> lstQuestOfRoom = new List<CleanQuest>();
+
+    [SerializeField] private List<GameObject> lstModelLv01 = new List<GameObject>();
+    [SerializeField] private List<GameObject> lstModelLv02 = new List<GameObject>();
     public Transform destination;
     public Transform bedDestination;
-    private int idRoom;
     private BotCharacter botCharacter;
+    private int idRoom;
+    public int levelRoom;
 
     private void Start()
     {
         unlockQuest.actionUnlockRoom += ActionUnlockFromQuest;
+        upgradeQuest.actionUpgradeRoom += ActionUpgradeFromQuest;
     }
     void ActionUnlockFromQuest()
     {
         SetStateRoom(RoomState.Unlock);
         FloorHandle.Instance.UpdateUnlockRoomQuest(idRoom);
     }
+    void ActionUpgradeFromQuest(int lv)
+    {
+        var _temp = DBController.Instance.FLOOR_DATA;
+        for (int i = 0; i < _temp.lstRoomState.Count; i++)
+        {
+            if (_temp.lstRoomState[i].roomId != idRoom) continue;
 
+            _temp.lstRoomState[i].level = lv;
+        }
+        DBController.Instance.FLOOR_DATA = _temp;
+
+        SetLevelRoom(lv);
+        FloorHandle.Instance.UpdateUnlockRoomQuest(idRoom);
+    }
     public void SetIdRoom(int id)
     {
         idRoom = id;
+    }
+    public void SetLevelRoom(int lv)
+    {
+        levelRoom = lv;
+        UpdateLevelModelRoom();
+    }
+
+    void UpdateLevelModelRoom()
+    {
+        var _isLevelOne = levelRoom == 1;
+        for (int i = 0, _countA = lstModelLv01.Count; i < _countA; i++)
+        {
+            lstModelLv01[i].SetActive(_isLevelOne);
+            lstModelLv02[i].SetActive(!_isLevelOne);
+        }
     }
     public void SetCharacterRentRoom(BotCharacter character)
     {
@@ -68,6 +102,12 @@ public class Room : MonoBehaviour
     {
         unlockQuest.gameObject.SetActive(status);
         unlockQuest.ActiveQuest();
+
+    }
+    public void ActiveQuestUpgrade(bool status)
+    {
+        upgradeQuest.gameObject.SetActive(status);
+        upgradeQuest.ActiveQuest();
     }
 
     public bool CheckRoomValid()
@@ -97,6 +137,8 @@ public class Room : MonoBehaviour
             lstQuestOfRoom[i].ActiveQuest();
         }
     }
+
+
 }
 public enum RoomState
 {

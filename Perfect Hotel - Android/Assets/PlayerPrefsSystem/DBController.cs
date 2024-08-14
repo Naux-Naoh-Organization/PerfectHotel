@@ -103,35 +103,20 @@ public class DBController : NauxUtils.Singleton<DBController>
 
         CheckDependency(DBKey.FLOOR_DATA, key =>
         {
-            var _temp = new FloorData();
-            _temp.lstRoomState = new List<bool> { true, false, false, false };
+        var _temp = new FloorData();
+            _temp.lstRoomState = new List<RoomInfo>();
+            for (int i = 0; i < 4; i++)
+            {
+                _temp.lstRoomState.Add(new RoomInfo());
+                _temp.lstRoomState[i].roomId = i;
+                _temp.lstRoomState[i].isUnlock = false;
+                _temp.lstRoomState[i].level = 1;
+            }
+
+            _temp.lstRoomState[0].isUnlock = true;
 
             FLOOR_DATA = _temp;
         });
-
-        //        CheckDependency(DBKey.CALENDAR_DATA, key =>
-        //        {
-        //            var temp = new ListMonthData();
-        //            temp.lstDataMonth = new List<MonthData>();
-        //
-        //            for (int i = 0; i < 3; i++)
-        //            {
-        //                var dayNow = DateTime.Today.AddMonths(-i);
-        //                temp.lstDataMonth.Add(new MonthData());
-        //                temp.lstDataMonth[i].year = dayNow.Year;
-        //                temp.lstDataMonth[i].month = dayNow.Month;
-        //                var daysInMonth = DateTime.DaysInMonth(dayNow.Year, dayNow.Month);
-        //                temp.lstDataMonth[i].lstStatusDay = new List<bool>();
-        //                for (int j = 0; j < daysInMonth; j++)
-        //                {
-        //                    temp.lstDataMonth[i].lstStatusDay.Add(false);
-        //                }
-        //            }
-        //
-        //            CALENDAR_DATA = temp;
-        //        });
-
-
         Load();
     }
 

@@ -10,7 +10,7 @@ public class DropItem : MonoBehaviour, IDroppable, ICollectable
     [SerializeField] private int amount;
     public int Amount => amount;
     private bool isPicked;
-    //private Vector3 posFoward;
+    private Vector3 posFoward;
 
     static int actionFly = Animator.StringToHash("PickupMoney");
 
@@ -53,17 +53,17 @@ public class DropItem : MonoBehaviour, IDroppable, ICollectable
         StartCoroutine(WaitToDestroy());
     }
 
-    //private void Start()
-    //{
-    //    var _rand = UnityEngine.Random.Range(0,2);
-        
-    //    posFoward = _rand == 0 ? Vector3.back : Vector3.forward;
-    //}
-    void FixedUpdate()
+    private void Start()
+    {
+        var _rand = UnityEngine.Random.Range(0, 2);
+
+        posFoward = _rand == 0 ? Vector3.back : Vector3.forward;
+    }
+    void Update()
     {
         if (!isPicked) return;
-        //transform.forward = posFoward;
-        transform.forward = Vector3.back;
+        transform.forward = posFoward;
+        //transform.forward = Vector3.back;
     }
 
     IEnumerator WaitToDestroy()

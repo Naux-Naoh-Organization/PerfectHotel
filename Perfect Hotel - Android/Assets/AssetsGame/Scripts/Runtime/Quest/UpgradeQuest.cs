@@ -1,10 +1,10 @@
-﻿using DG.Tweening;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class UnlockQuest : Quest
+public class UpgradeQuest : Quest
 {
-    [Header(nameof(UnlockQuest))]
+    [Header(nameof(UpgradeQuest))]
     [SerializeField] private InteractionRequest interactionRequest;
 
     [SerializeField] private UnlockQuestType unlockQuestType;
@@ -13,9 +13,9 @@ public class UnlockQuest : Quest
     [SerializeField] private float timeDelaySpend;
     private float timeDelayPayAnim;
 
-    public UnityAction actionUnlockRoom;
+    public UnityAction<int> actionUpgradeRoom;
     private float timeCheckDelay;
-
+    public int upgradeToLevel;
 
     public override void Init()
     {
@@ -79,13 +79,13 @@ public class UnlockQuest : Quest
         var _posPlayer = PlayerHandle.Instance.PlayerCharacter.transform.position;
         _posPlayer.y += 1;
         var _gobj = SpawnHandle.Instance.SpawnObj(SpawnID.MoneyPay, _posPlayer);
-        _gobj.transform.DOScale(Vector3.one * 0.7f, 0.3f);
-        _gobj.transform.DOJump(transform.position, 1, 1, 0.3f).SetEase(Ease.Linear).OnComplete(() => Destroy(_gobj));
+        _gobj.transform.DOScale(Vector3.one * 0.7f, 0.2f);
+        _gobj.transform.DOJump(transform.position, 1, 1, 0.2f).SetEase(Ease.Linear).OnComplete(() => Destroy(_gobj));
     }
 
     public override void RewardQuest()
     {
-        actionUnlockRoom?.Invoke();
+        actionUpgradeRoom?.Invoke(upgradeToLevel);
     }
 
     [ContextMenu(nameof(AddInteractionRequest))]
@@ -93,10 +93,4 @@ public class UnlockQuest : Quest
     {
         interactionRequest = GetComponentInChildren<InteractionRequest>();
     }
-}
-
-public enum UnlockQuestType
-{
-    Bed = 0,
-    Upgrade = 1,
 }

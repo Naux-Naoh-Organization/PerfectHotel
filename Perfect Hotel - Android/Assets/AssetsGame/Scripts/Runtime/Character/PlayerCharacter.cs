@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerCharacter : Character
@@ -16,8 +17,18 @@ public class PlayerCharacter : Character
     public void CollectedMoneyItem(int amount)
     {
         DBController.Instance.MONEY += amount;
-        CurrencyBar.Instance.UpdateMoneyUI(DBController.Instance.MONEY);
+        var _fakeMoney = DBController.Instance.MONEY;
+
+        StartCoroutine(UpdateMoneyUI(_fakeMoney));
     }
+
+    IEnumerator UpdateMoneyUI(int priceUpdate)
+    {
+        yield return new WaitForSeconds(1);
+        CurrencyBar.Instance.UpdateMoneyUI(priceUpdate);
+
+    }
+
 
     public void SpendMoneyToPay(int amount)
     {

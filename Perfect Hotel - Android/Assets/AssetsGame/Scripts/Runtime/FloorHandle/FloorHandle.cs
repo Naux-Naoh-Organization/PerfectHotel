@@ -27,26 +27,42 @@ public class FloorHandle : Singleton<FloorHandle>
         var _showedQuestUnlock = false;
         for (int i = 0; i < _count; i++)
         {
-            lstRooms[i].SetIdRoom(i);
-            lstRooms[i].SetStateRoom(_lstRoomState[i] ? RoomState.Unlock : RoomState.Lock);
+            lstRooms[i].SetIdRoom(_lstRoomState[i].roomId);
+            lstRooms[i].SetLevelRoom(_lstRoomState[i].level);
 
-            if (_lstRoomState[i] || _showedQuestUnlock) continue;
+            lstRooms[i].SetStateRoom(_lstRoomState[i].isUnlock ? RoomState.Unlock : RoomState.Lock);
+
+            if (_lstRoomState[i].isUnlock || _showedQuestUnlock) continue;
             _showedQuestUnlock = true;
             lstRooms[i].ActiveQuestUnlock(true);
+        }
+        //if go here, 100% full unlock, so check level
+        for (int i = 0; i < _count; i++)
+        {
+            if (_lstRoomState[i].level == 2 || _showedQuestUnlock) continue;
+            _showedQuestUnlock = true;
+            lstRooms[i].ActiveQuestUpgrade(true);
         }
     }
 
     public void UpdateUnlockRoomQuest(int idRoom)
     {
         var _floorData = DBController.Instance.FLOOR_DATA;
-        _floorData.lstRoomState[idRoom] = true;
+        _floorData.lstRoomState[idRoom].isUnlock = true;
         DBController.Instance.FLOOR_DATA = _floorData;
 
         var _count = _floorData.lstRoomState.Count;
         for (int i = 0; i < _count; i++)
         {
-            if (_floorData.lstRoomState[i]) continue;
+            if (_floorData.lstRoomState[i].isUnlock) continue;
             lstRooms[i].ActiveQuestUnlock(true);
+            return;
+        }
+        //if go here, 100% full unlock, so check level
+        for (int i = 0; i < _count; i++)
+        {
+            if (_floorData.lstRoomState[i].level == 2) continue;
+            lstRooms[i].ActiveQuestUpgrade(true);
             return;
         }
     }
@@ -63,7 +79,7 @@ public class FloorHandle : Singleton<FloorHandle>
         }
         return false;
     }
-    public void RequiredRoom()
+    public Room RequiredRoom()
     {
         var _count = lstRooms.Count;
         for (int i = 0; i < _count; i++)
@@ -80,8 +96,9 @@ public class FloorHandle : Singleton<FloorHandle>
             lstBotWaiting[0].RentRoomCommand(_podDestination, _posBed, _posDoor);
             lstBotWaiting.RemoveAt(0);
             StartCoroutine(nameof(UpdateWaitingPlace));
-            return;
+            return lstRooms[i];
         }
+        return null;
     }
 
     IEnumerator UpdateWaitingPlace()
@@ -105,5 +122,13 @@ public class FloorHandle : Singleton<FloorHandle>
 [Serializable]
 public class FloorData
 {
-    public List<bool> lstRoomState = new List<bool>();
+    public List<RoomInfo> lstRoomState = new List<RoomInfo>();
+}
+
+[Serializable]
+public class RoomInfo
+{
+    public int roomId;
+    public bool isUnlock;
+    public int level;
 }

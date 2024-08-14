@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class BotCharacter : Character
     [SerializeField] private SkinnedMeshRenderer skinnedMeshRenderer;
     [SerializeField] private List<Mesh> lstMeshSkin = new List<Mesh>();
     public UnityAction actionCheckOut;
-    
+
 
     private void Awake()
     {
@@ -58,6 +59,17 @@ public class BotCharacter : Character
         actionCheckOut?.Invoke();
         AddDestination(posDoor);
         ChangeStateAction(ActionState.Walk);
+
+        var _rand = Random.Range(0, 2);
+        if(_rand == 0)
+        {
+            var _posBot = transform.position;
+            _posBot.y += 1;
+            var _gobj = SpawnHandle.Instance.SpawnObj(SpawnID.Money, _posBot);
+            var _moneyDrop = _gobj.GetComponent<DropItem>();
+            _moneyDrop.SetAmountItem(2);
+            _moneyDrop.transform.DOJump(destination, 1, 1, 0.3f).SetEase(Ease.Linear);
+        }
 
         yield return new WaitUntil(() => navMeshAgent.pathPending == false && navMeshAgent.remainingDistance <= 0);
         Destroy(gameObject);
