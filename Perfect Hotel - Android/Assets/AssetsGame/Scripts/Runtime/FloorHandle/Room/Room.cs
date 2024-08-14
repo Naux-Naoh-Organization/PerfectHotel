@@ -8,7 +8,8 @@ public class Room : MonoBehaviour
     [SerializeField] private GameObject gobjRoomObjects;
     [SerializeField] private UnlockQuest unlockQuest;
     [SerializeField] private List<CleanQuest> lstQuestOfRoom = new List<CleanQuest>();
-    public GameObject destination;
+    public Transform destination;
+    public Transform bedDestination;
     private int idRoom;
     private BotCharacter botCharacter;
 

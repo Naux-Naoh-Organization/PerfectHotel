@@ -18,7 +18,6 @@ public class BotCharacter : Character
     }
     void AddDestination(Vector3 destination)
     {
-        ChangeStateAction(ActionState.Walk);
         navMeshAgent.SetDestination(destination);
     }
 
@@ -30,32 +29,39 @@ public class BotCharacter : Character
     IEnumerator MoveToDesAction(Vector3 destination)
     {
         AddDestination(destination);
+        ChangeStateAction(ActionState.Walk);
+        yield return new WaitUntil(() => navMeshAgent.pathPending == false && navMeshAgent.remainingDistance <= 0);
 
-        yield return new WaitUntil(() => navMeshAgent.pathPending == false && navMeshAgent.remainingDistance <= 0.5f);
-
-         yield return new WaitForSeconds(0.3f); // best time
+        yield return new WaitForSeconds(0.3f); // best time
         ChangeStateAction(ActionState.Idle);
     }
 
 
-    public void RentRoomCommand(Vector3 destination, Vector3 posDoor)
+    public void RentRoomCommand(Vector3 destination, Vector3 posBed, Vector3 posDoor)
     {
-        StartCoroutine(RentRoomAction(destination, posDoor));
+        StartCoroutine(RentRoomAction(destination, posBed, posDoor));
     }
-    IEnumerator RentRoomAction(Vector3 destination, Vector3 posDoor)
+    IEnumerator RentRoomAction(Vector3 destination, Vector3 posBed, Vector3 posDoor)
     {
         AddDestination(destination);
+        ChangeStateAction(ActionState.Walk);
+        yield return new WaitUntil(() => navMeshAgent.pathPending == false && navMeshAgent.remainingDistance <= 0);
 
-        yield return new WaitUntil(() => navMeshAgent.pathPending == false && navMeshAgent.remainingDistance <= 0.5f);
-        yield return new WaitForSeconds(0.4f); 
-        ChangeStateAction(ActionState.Idle);
-        ChangeStateAction(ActionState.Idle); //anmim sleep?
+        yield return new WaitForSeconds(0.1f);
+        //transform.forward = (-Vector3.forward);
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.3f);
+        ChangeStateAction(ActionState.Sleep);
+
+        yield return new WaitForSeconds(0.5f);
+        AddDestination(posBed);
+
+        yield return new WaitForSeconds(8);
         actionCheckOut?.Invoke();
         AddDestination(posDoor);
+        ChangeStateAction(ActionState.Walk);
 
-        yield return new WaitUntil(() => navMeshAgent.pathPending == false && navMeshAgent.remainingDistance <= 0.5f);
+        yield return new WaitUntil(() => navMeshAgent.pathPending == false && navMeshAgent.remainingDistance <= 0);
         Destroy(gameObject);
     }
 }

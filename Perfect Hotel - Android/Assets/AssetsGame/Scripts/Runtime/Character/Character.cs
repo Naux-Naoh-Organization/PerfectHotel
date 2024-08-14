@@ -19,4 +19,5 @@ public enum ActionState
     Sad = 3,
     Win = 4,
     SongJump = 5,
+    Sleep = 6,
 }

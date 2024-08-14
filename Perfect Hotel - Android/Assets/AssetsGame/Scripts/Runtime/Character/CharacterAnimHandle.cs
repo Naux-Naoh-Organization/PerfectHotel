@@ -7,6 +7,7 @@ public class CharacterAnimHandle : MonoBehaviour
 
     static int idleAction = Animator.StringToHash("Idle");
     static int walkAction = Animator.StringToHash("Walk");
+    static int sleepAction = Animator.StringToHash("Sleep");
     static int runAction = Animator.StringToHash("Run");
     static int sadAction = Animator.StringToHash("Sad");
     static int winAction = Animator.StringToHash("Win");
@@ -22,6 +23,9 @@ public class CharacterAnimHandle : MonoBehaviour
                 break;
             case ActionState.Walk:
                 animator.Play(walkAction);
+                break;
+            case ActionState.Sleep:
+                animator.Play(sleepAction);
                 break;
             case ActionState.Run:
                 animator.Play(runAction);

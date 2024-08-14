@@ -65,12 +65,13 @@ public class FloorHandle : Singleton<FloorHandle>
             var _valid = lstRooms[i].CheckRoomValid();
             if (!_valid) continue;
 
-            var _podDestination = lstRooms[i].destination.transform.position;
+            var _podDestination = lstRooms[i].destination.position;
+            var _posBed = lstRooms[i].bedDestination.position;
             var _rand = UnityEngine.Random.Range(0, 2);
             var _posDoor = _rand == 0 ? doorLeft.position : doorRight.position;
 
             lstRooms[i].SetCharacterRentRoom(lstBotWaiting[0]);
-            lstBotWaiting[0].RentRoomCommand(_podDestination, _posDoor);
+            lstBotWaiting[0].RentRoomCommand(_podDestination, _posBed, _posDoor);
             lstBotWaiting.RemoveAt(0);
             StartCoroutine(nameof(UpdateWaitingPlace));
             return;

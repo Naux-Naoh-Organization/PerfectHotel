@@ -10,9 +10,6 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 5453568335538122831}
-    m_Position: {x: 700, y: -10, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 3277112123247120908}
     m_Position: {x: 410, y: 0, z: 0}
   - serializedVersion: 1
@@ -29,7 +26,10 @@ AnimatorStateMachine:
     m_Position: {x: 410, y: -100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4016377108878769668}
-    m_Position: {x: 310, y: 300, z: 0}
+    m_Position: {x: 440, y: 300, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 7622609699378998517}
+    m_Position: {x: 710, y: 0, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -218,15 +218,15 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &5453568335538122831
+--- !u!1102 &7622609699378998517
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: A-pose
-  m_Speed: 1
+  m_Name: Sleep
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -238,7 +238,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 8ac99bbd96c286f46a2de6578ff8e0df, type: 2}
+  m_Motion: {fileID: 7400000, guid: 156a1219ebaa84b4c9bcd27932754a48, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
