@@ -86,7 +86,10 @@ public class CleanQuest : Quest
         var _check = CheckCompletedProcess();
         if (!_check) return;
 
-        SetQuestState(QuestState.QuestCompleted);        
+        SetQuestState(QuestState.QuestCompleted);
+        var posEFX = interactionWheel.transform.position;
+        posEFX.y -= 1.5f;
+        SpawnHandle.Instance.SpawnObj(SpawnID.EfxClean, posEFX);
         HideQuest();
         RewardQuest();
     }

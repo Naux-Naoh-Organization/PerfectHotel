@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class DropItem : MonoBehaviour, IDroppable, ICollectable
 {
@@ -43,6 +45,16 @@ public class DropItem : MonoBehaviour, IDroppable, ICollectable
         {
             moneyPlace.area.ResetPlace(moneyPlace.idFloor, moneyPlace.idPlace);
         }
+
+        StartCoroutine(ItemPicked(charact));
+    }
+
+    IEnumerator ItemPicked(PlayerCharacter character)
+    {
+        //transform.SetParent(character.transform);
+        var _time = 1f;
+        Vector3.Slerp(transform.position, character.transform.position, _time);
+        yield return new WaitForSeconds(_time);
         Destroy(gameObject);
     }
 }
