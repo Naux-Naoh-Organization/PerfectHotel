@@ -5,6 +5,7 @@ public class PlayerHandle : Singleton<PlayerHandle>
 {
     [SerializeField] private FloatingJoystick joystick;
     [SerializeField] private PlayerCharacter character;
+    public PlayerCharacter PlayerCharacter => character;
 
     private void Update()
     {
@@ -25,9 +26,4 @@ public class PlayerHandle : Singleton<PlayerHandle>
         character.MoveToDirection(joystick.Direction);
     }
 
-    public void SpendMoneyToPay(int amount)
-    {
-        DBController.Instance.MONEY -= amount;
-        CurrencyBar.Instance.UpdateMoneyUI(DBController.Instance.MONEY);
-    }
 }

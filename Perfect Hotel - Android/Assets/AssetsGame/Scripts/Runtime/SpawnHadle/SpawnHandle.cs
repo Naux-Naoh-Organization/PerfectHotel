@@ -45,4 +45,5 @@ public enum SpawnID
     Money = 0,
     EfxClean = 1,
     BotAI = 2,
+    MoneyPay = 3,
 }

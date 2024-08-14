@@ -8500,6 +8500,8 @@ MonoBehaviour:
     prefabSpawn: {fileID: 2008231186166030793, guid: 432cbe713ce391d4490502ed00cd7fbc, type: 3}
   - spawnID: 1
     prefabSpawn: {fileID: 7080957815279797450, guid: cc33768e2e70c7746aaf5ff7a19607b8, type: 3}
+  - spawnID: 3
+    prefabSpawn: {fileID: 4355341844178865201, guid: 4d289c3f8d226544e8177cefa7bf5502, type: 3}
 --- !u!4 &918230201
 Transform:
   m_ObjectHideFlags: 0

@@ -47,8 +47,6 @@ public class BotCharacter : Character
         AddDestination(destination);
         ChangeStateAction(ActionState.Walk);
         yield return new WaitUntil(() => navMeshAgent.pathPending == false && navMeshAgent.remainingDistance <= 0);
-        //yield return new WaitForSeconds(0.1f);
-        //transform.forward = (-Vector3.forward);
 
         yield return new WaitForSeconds(0.1f);
         ChangeStateAction(ActionState.Sleep);

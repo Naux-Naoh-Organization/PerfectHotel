@@ -20,6 +20,6 @@ public class CameraFollow : MonoBehaviour
     void Update()
     {
         _camera.transform.position = tfmFollow.position + vectorOffset;
-        _camera.transform.rotation = Quaternion.Euler(vectorRotCam);
+        //_camera.transform.rotation = Quaternion.Euler(vectorRotCam);
     }
 }

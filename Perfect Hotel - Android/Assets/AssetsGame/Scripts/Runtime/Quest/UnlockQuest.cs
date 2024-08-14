@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class UnlockQuest : Quest
@@ -10,9 +11,11 @@ public class UnlockQuest : Quest
     [SerializeField] private int priceQuest;
     [SerializeField] private int priceSpendEachTime;
     [SerializeField] private float timeDelaySpend;
-    private float timeCheckDelay;
+    [SerializeField] private float timeDelayPayAnim;
 
     public UnityAction actionUnlockRoom;
+    private float timeCheckDelay;
+
 
     public override void Init()
     {
@@ -20,7 +23,7 @@ public class UnlockQuest : Quest
         if (interactionRequest == null)
             interactionRequest = GetComponentInChildren<InteractionRequest>();
     }
-        
+
     public override void ActiveQuest()
     {
         base.ActiveQuest();
@@ -54,8 +57,8 @@ public class UnlockQuest : Quest
             timeCheckDelay -= Time.deltaTime;
             if (timeCheckDelay > 0) return;
             timeCheckDelay = timeDelaySpend;
-
-            PlayerHandle.Instance.SpendMoneyToPay(priceSpendEachTime);
+            SpawnPayMoney();
+            PlayerHandle.Instance.PlayerCharacter.SpendMoneyToPay(priceSpendEachTime);
             priceQuest -= priceSpendEachTime;
             interactionRequest.SetPrice(priceQuest);
         }
@@ -66,6 +69,17 @@ public class UnlockQuest : Quest
         SetQuestState(QuestState.QuestCompleted);
         HideQuest();
         RewardQuest();
+    }
+    void SpawnPayMoney()
+    {
+        timeDelayPayAnim -= Time.deltaTime;
+        if (timeDelayPayAnim > 0) return;
+
+        timeDelayPayAnim = 0.2f;
+        var _posPlayer = PlayerHandle.Instance.PlayerCharacter.transform.position;
+        _posPlayer.y += 1;
+        var _gobj = SpawnHandle.Instance.SpawnObj(SpawnID.MoneyPay, _posPlayer);
+        _gobj.transform.DOJump(transform.position, 1, 1, 0.5f).SetEase(Ease.Linear).OnComplete(() => Destroy(_gobj));
     }
 
     public override void RewardQuest()

@@ -18,4 +18,11 @@ public class PlayerCharacter : Character
         DBController.Instance.MONEY += amount;
         CurrencyBar.Instance.UpdateMoneyUI(DBController.Instance.MONEY);
     }
+
+    public void SpendMoneyToPay(int amount)
+    {
+        DBController.Instance.MONEY -= amount;
+        CurrencyBar.Instance.UpdateMoneyUI(DBController.Instance.MONEY);
+    }
+
 }
